@@ -1,4 +1,8 @@
 # LXM Protocol Core
+![CI](https://github.com/derekwins88/lxm-protocol-core/actions/workflows/ci.yml/badge.svg)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Version](https://img.shields.io/badge/version-1.0.0-blue)
+
 ### Deterministic Integrity Middleware for Distributed Systems
 
 LXM Protocol Core is a lightweight, deterministic middleware engine designed to validate structured state transitions and generate reproducible artifact identifiers (LXM-IDs).
@@ -106,29 +110,18 @@ Provides deterministic event validation and artifact sealing for regulated envir
 
 ## Architecture Overview
 
-```text
-          ┌──────────────────────┐
-          │   Input Vector       │
-          └──────────┬───────────┘
-                     ↓
-          ┌──────────────────────┐
-          │  Validation Layer    │
-          └──────────┬───────────┘
-                     ↓
-          ┌──────────────────────┐
-          │  State Processor     │
-          └──────────┬───────────┘
-                     ↓
-          ┌──────────────────────┐
-          │ Deterministic Engine │
-          └──────────┬───────────┘
-                     ↓
-          ┌──────────────────────┐
-          │  LXM Artifact ID     │
-          └──────────────────────┘
+### System Flow
+
+```mermaid
+flowchart TD
+    A[Input Vector] --> B[Validation Layer]
+    B --> C[State Processor]
+    C --> D[Deterministic Engine]
+    D --> E[LXM Artifact ID]
+    E --> F[Integrity Signature]
 ```
 
-All outputs are reproducible under identical input conditions.
+All outputs are reproducible under identical input conditions, ensuring deterministic execution consistency across distributed environments.
 
 ---
 
