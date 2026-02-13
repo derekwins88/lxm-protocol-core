@@ -8,13 +8,6 @@
     "start": "node src/api/server.js",
     "test": "node tests/generator.test.js"
   },
-  "keywords": [
-    "middleware",
-    "protocol",
-    "deterministic",
-    "artifact-generation",
-    "state-machine"
-  ],
   "author": "Derek Espinoza",
   "license": "MIT",
   "dependencies": {
